@@ -34,7 +34,7 @@ def main():
     scafs = {}
     with open(sys.argv[1], 'r') as fa:
         for name, seq in read_fasta(fa):
-            name = name.replace(">", "")
+            name = name.replace(">", "").split()[0]
             scafs[name] = seq
     with open(sys.argv[2], 'r') as fh:
         data = {}
