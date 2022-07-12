@@ -408,7 +408,7 @@ do
 	perl $bin/paml.lrt.pl $b/H1.mlc $b/H0.mlc 1
 done > all.ortholog.pvalue
 
-# q-value
+# q-value, find the significant positively selected genes
 perl $bin/paml.fdr.pl all.ortholog.pvalue BH 0.05 > all.ortholog.qvalue
 
 awk  '$3 == "significant" && $1==0 {print $2}' all.ortholog.qvalue > all.significant.gene
